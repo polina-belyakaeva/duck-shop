@@ -1,0 +1,21 @@
+@mixin cta-button(
+  $bg-color: $primary-initial,
+  $text-color: $primary-text,
+  $transition: 'background 0.2s ease, color 0.2s ease'
+) {
+  background: $bg-color;
+  color: $text-color;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  transition: unquote($transition);
+
+  &:hover {
+    background: darken($bg-color, 8%);
+  }
+
+  &:active {
+    background: darken($bg-color, 16%);
+  }
+}

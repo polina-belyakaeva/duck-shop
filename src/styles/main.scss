@@ -1,0 +1,170 @@
+@import './reset';
+@import './variables';
+@import './mixins';
+
+@import './components/header';
+@import './components/hero';
+@import './components/popup';
+@import './components/menu';
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 16px;
+  flex-grow: 1;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 375px;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  font-family: $font-main;
+  color: $text-primary;
+}
+
+main {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.burger-button,
+.basket-button,
+.button--cta {
+  flex-shrink: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: #00000033;
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+
+    li {
+      .nav__link {
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-secondary;
+        transition: color 0.2s;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        gap: 4px;
+
+        img {
+          width: 20px;
+          height: 20px;
+          transition: transform 0.2s ease;
+        }
+        
+        &.active {
+          color: $secondary-initial;
+          text-decoration: underline;
+        }
+
+        &:hover {
+          color: $secondary-hover;
+        }
+
+        &:active {
+          color: $secondary-pressed;
+        }
+      }
+    }
+
+    @media (max-width: 960px) {
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
+  &--desktop {
+    @media (max-width: 960px) {
+      display: none !important;
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    @media (max-width: 960px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .nav--mobile .nav__item {
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 375px) {
+  #app {
+    padding: 5px 16px 36px;
+  }
+}
