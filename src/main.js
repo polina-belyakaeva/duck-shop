@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.createElement('div');
     wrapper.classList.add('category-element');
     const arrow = document.createElement('img');
-    arrow.src = '/arrow.svg';
+    arrow.src = 'arrow.svg';
     arrow.alt = 'Указатель';
     wrapper.appendChild(arrow);
     const link = document.createElement('a');

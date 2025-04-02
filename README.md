@@ -1,7 +1,12 @@
 # Duck Shop
 
-Duck Shop — это адаптивный веб-сайт для магазина уточек. 
+Duck Shop — это адаптивный веб-сайт для магазина уточек.
 Проект построен с использованием Vite, HTML5, SCSS и ванильного JavaScript.
+
+## Live Demo
+
+Посмотреть проект:  
+:eyes: [https://polina-belyakaeva.github.io/duck-shop](https://polina-belyakaeva.github.io/duck-shop)
 
 ## Особенности
 
