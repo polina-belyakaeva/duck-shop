@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="nav-icon" viewBox="0 0 16 16">
+    <path d="M2 4H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M2 8H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M2 12H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>

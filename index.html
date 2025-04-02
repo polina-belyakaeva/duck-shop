@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Duck Shop</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Jura:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <script type="module" crossorigin src="/duck-shop/assets/index-CMBy0SWL.js"></script>
+    <link rel="stylesheet" crossorigin href="/duck-shop/assets/index-8kGNBqFY.css">
+  </head>
+
+  <body>
+    <div id="app">
+    <div class="overlay" id="menu-overlay" aria-hidden="true"></div>
+
+    <header class="header" role="banner">
+      <div class="container header__container">
+        <a class="header__logo" href="/" aria-label="На главную DuckShop">
+          <img
+            class="header__logo-img"
+            src="/duck-shop/duck-logo.svg"
+            alt="DuckShop логотип"
+          />
+          <span class="sr-only">DuckShop — на главную</span>
+        </a>
+
+        <nav
+          class="nav nav--desktop header__nav"
+          role="navigation"
+          aria-label="Основная навигация"
+        >
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link" data-link="home">Главная</a>
+            </li>
+            <li class="nav__item">
+              <button
+                class="nav__link nav__toggle"
+                data-link="catalog"
+                aria-label="Открыть список каталога"
+              >
+                Каталог
+              <img src="/duck-shop/chevron-down.svg" alt="" />
+              </button>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link" data-link="blog">Блог</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link" data-link="reviews">Отзывы</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link" data-link="contacts">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__actions">
+          <button
+            class="button basket-button"
+            id="shopping-basket-btn"
+            aria-label="Корзина"
+            type="button"
+          >
+              <span class="basket-icon" role="img" aria-label="Корзина"></span>
+          </button>
+
+          <button
+            class="button button--cta button--yellow open-callback"
+            type="button"
+          >
+            Заказать звонок
+          </button>
+
+          <button
+            class="button burger-button"
+            id="menu-btn"
+            aria-label="Открыть меню"
+            type="button"
+          >
+            <svg class="icon icon--burger" aria-hidden="true">
+              <use xlink:href="/duck-shop/sprites.svg#nav-icon"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main" id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <div class="hero__text-block">
+              <h1 id="hero-title" class="hero__title hero__title--left">
+                МНОГО
+              </h1>
+              <div class="hero__title--right">
+                <h1 class="hero__title">
+                  УТОЧЕК
+                </h1>
+  
+                <div class="hero__action">
+                  <p class="hero__desc">
+                    Маленький друг найдётся для каждого<br />
+                    в этом кряквенно жёлтом мире
+                  </p>
+                  <button
+                    class="button button--cta"
+                    type="button"
+                  >
+                    Смотреть уточек
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero__duck" aria-hidden="true">
+              <img
+                class="hero__duck-img"
+                src="/duck-shop/duck-hero.png"
+                alt="Жёлтая уточка"
+              />
+              <img
+                class="hero__speech-bubble"
+                src="/duck-shop/duck-speech-bubble.svg"
+                alt="Duck speech: кря"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="hero__categories category-scroll"
+          id="category-scroll"
+          aria-label="Категории уточек"
+        ></div>
+      </section>
+    </main>
+
+    <div
+      class="popup"
+      id="callback-popup"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="popup-title"
+      hidden
+    >
+      <div class="popup__content">
+        <button
+          class="popup__close"
+          id="popup-close"
+          aria-label="Закрыть форму"
+          type="button"
+        >
+        <img src="/duck-shop/close-button.svg" alt="Close form" />
+        </button>
+
+        <form id="callback-form" class="form">
+          <div class="form__group">
+            <label class="form__label" for="name">Имя</label>
+            <input
+              class="form__input"
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Введите ваше имя"
+              required
+            />
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="phone">Телефон</label>
+            <input
+              class="form__input"
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="+7 000 000 00 00"
+              required
+            />
+          </div>
+
+          <button type="submit" class="button button--cta button--yellow">
+            Отправить
+          </button>
+        </form>
+        <p class="form__privacy">
+          Нажимая кнопку “Отправить”, вы соглашаетесь с
+          <a href="#">политикой конфиденциальности</a>
+          и
+          <a href="#">договором оферты</a>.
+        </p>
+      </div>
+    </div>
+
+    <nav
+      class="mobile-menu"
+      id="mobile-menu"
+      aria-label="Мобильное меню"
+      hidden
+    >
+      <div class="mobile-menu__header">
+        <a
+          href="/"
+          class="mobile-menu__logo"
+          aria-label="DuckShop — на главную"
+        >
+          <img src="/duck-shop/duck-logo.svg" alt="Логотип DuckShop" />
+          <span class="sr-only">DuckShop — на главную</span>
+        </a>
+        <button
+          class="mobile-menu__close"
+          id="menu-close"
+          aria-label="Закрыть меню"
+          type="button"
+        >
+        <img src="/duck-shop/close-button.svg" alt="Close form" />
+        </button>
+      </div>
+
+      <ul class="nav nav--mobile nav__list" role="menu">
+        <li class="nav__item" role="none">
+          <a
+            href="#"
+            class="nav__link"
+            data-link="home"
+            role="menuitem"
+          >
+            Главная
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a
+            href="#"
+            class="nav__link"
+            data-link="catalog"
+            role="menuitem"
+          >
+            Каталог
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a
+            href="#"
+            class="nav__link"
+            data-link="blog"
+            role="menuitem"
+          >
+            Блог
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a
+            href="#"
+            class="nav__link"
+            data-link="reviews"
+            role="menuitem"
+          >
+            Отзывы
+          </a>
+        </li>
+        <li class="nav__item" role="none">
+          <a
+            href="#"
+            class="nav__link"
+            data-link="contacts"
+            role="menuitem"
+          >
+            Контакты
+          </a>
+        </li>
+      </ul>
+
+      <div class="mobile-menu__action">
+        <button
+          class="button button--cta button--yellow open-callback"
+          type="button"
+        >
+          Заказать звонок
+        </button>
+      </div>
+    </nav>
+  </div>
+  </body>
+</html>
+
